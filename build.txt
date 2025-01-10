@@ -1,0 +1,3 @@
+displayName = Blessing of Regrowth
+author = ProfBrickz
+version = 0.0
