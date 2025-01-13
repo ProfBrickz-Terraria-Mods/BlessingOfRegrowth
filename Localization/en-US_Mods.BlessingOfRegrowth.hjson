@@ -1,2 +1,10 @@
-# This file will automatically update with entries for new content after a build and reload.
-
+Items: {
+	JunglesBlessing: {
+		DisplayName: Jungle's Blessing
+		Tooltip:
+			'''
+			Unlocks an ability toggle to the left of the inventory
+			When enabled you will place acorns when cutting down trees
+			'''
+	}
+}
