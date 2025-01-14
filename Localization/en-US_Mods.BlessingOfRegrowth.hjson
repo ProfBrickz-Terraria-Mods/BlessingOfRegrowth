@@ -8,3 +8,10 @@ Items: {
 			'''
 	}
 }
+
+BuilderToggles: {
+	RegrowthMode: {
+		OnText: Regrowth On
+		OffText: Regrowth Off
+	}
+}

@@ -3,6 +3,7 @@ using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
 
+
 namespace BlessingOfRegrowth.Content.Items {
    public class JunglesBlessing : ModItem {
       public override void SetDefaults() {
