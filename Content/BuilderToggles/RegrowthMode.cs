@@ -3,6 +3,7 @@ using Terraria;
 using Terraria.DataStructures;
 using Terraria.Localization;
 using Terraria.ModLoader;
+using BlessingOfRegrowth.Common;
 
 
 namespace BlessingOfRegrowth.Content.BuilderToggles {
@@ -23,8 +24,7 @@ namespace BlessingOfRegrowth.Content.BuilderToggles {
       }
 
       public override bool Active() {
-         return true;
-         // return Main.LocalPlayer.GetModPlayer<BlessingOfRegrowthPlayer>().unlockedRegrowthMode;
+         return Main.LocalPlayer.GetModPlayer<BlessingOfRegrowthPlayer>().unlockedRegrowthMode;
       }
 
       public override bool Draw(SpriteBatch spriteBatch, ref BuilderToggleDrawParams drawParams) {
