@@ -1,9 +1,9 @@
+using BlessingOfRegrowth.Common;
 using Microsoft.Xna.Framework.Graphics;
 using Terraria;
 using Terraria.DataStructures;
 using Terraria.Localization;
 using Terraria.ModLoader;
-using BlessingOfRegrowth.Common;
 
 
 namespace BlessingOfRegrowth.Content.BuilderToggles {
