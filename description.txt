@@ -1,1 +1,2 @@
-Modify this file with a description of your mod.
+Blessing of Regrowth is a mod that introduces a new item, called Jungle's Blessing which drops from Plantera.
+The Jungle's Blessing unlocks a toggle that allows the player to replant tress when chopping them down like the Axe of Regrowth.
