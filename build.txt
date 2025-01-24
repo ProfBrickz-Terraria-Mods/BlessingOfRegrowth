@@ -1,4 +1,4 @@
 displayName = Blessing of Regrowth
 weakReferences = RegrowthReplant
 author = ProfBrickz
-version = 1.0
+version = 1.1
