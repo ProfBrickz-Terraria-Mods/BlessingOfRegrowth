@@ -12,7 +12,14 @@ namespace BlessingOfRegrowth {
       private const int plantBreakDisableTime = 5;
       private Mod regrowthReplant = null;
 
-      ushort[] gemcornTrees = {
+      private ushort[] validTreeTypes =  {
+         TileID.Trees,
+         TileID.PalmTree,
+         TileID.VanityTreeSakura,
+         TileID.VanityTreeYellowWillow,
+         TileID.TreeAsh
+      };
+      private ushort[] gemcornTrees = {
          TileID.TreeTopaz,
          TileID.TreeAmethyst,
          TileID.TreeSapphire,
@@ -77,11 +84,13 @@ namespace BlessingOfRegrowth {
 
          Tile treeTile = Main.tile[treeX, treeY];
 
-         if (treeTile.TileType == TileID.Trees) isTree = true;
+         if (Array.Exists(validTreeTypes, type => type == treeTile.TileType)) isTree = true;
          else return isTree;
 
          // Get the bottom of the tree
          WorldGen.GetTreeBottom(treeX, treeY, out int groundX, out int groundY);
+
+         Main.NewText("test1");
 
          // Prevent breaking saplings if the timer is active
          if (plantBreakDisableTimer > DateTime.Now && treeTile.TileType == TileID.Saplings) {
@@ -89,18 +98,27 @@ namespace BlessingOfRegrowth {
             return isTree;
          }
 
+         Main.NewText("test2");
+
          // Check if the tile is not the bottom of the tree or the tile above is not a tree
          if (
             treeX != groundX || treeY != groundY - 1 ||
-            Main.tile[treeX, treeY - 1].TileType != TileID.Trees
+            !Array.Exists(validTreeTypes, type => Main.tile[treeX, treeY - 1].TileType == type)
          ) {
             return isTree;
          }
 
+         Main.NewText("test3");
+         Main.NewText(canHitWalls);
+
          orig.Invoke(player, sItem, out canHitWalls, treeX, treeY);
+
+         Main.NewText("test4");
 
          // Return if the tree was not broken
          if (treeTile.TileType != TileID.Dirt) return true;
+
+         Main.NewText("test5");
 
          // Place a sapling at the tree's position
          if (!TileObject.CanPlace(
